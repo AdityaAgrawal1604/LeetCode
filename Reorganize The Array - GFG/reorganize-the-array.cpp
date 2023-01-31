@@ -32,7 +32,7 @@ int * Rearrange(int *arr,int n){
     // Complete the function
     int i = 0;
     while(i<n){
-        if((arr[i]!=-1)&&(arr[i]!=arr[arr[i]])){
+        if((arr[i]!=-1)&&(arr[i]!=i)){
             swap(arr[i],arr[arr[i]]); 
         }else{
             i++;
