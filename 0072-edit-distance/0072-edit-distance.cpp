@@ -1,24 +1,28 @@
 class Solution {
 public:
-    int f(int i,int j,string &s,string &t,vector<vector<int>> &dp){
-        if(j<0){
-            return i+1;
-        }
+    int f(string &s1,string &s2,int i,int j,vector<vector<int>> &dp){
         if(i<0){
             return j+1;
+        }
+        if(j<0){
+            return i+1;
         }
         if(dp[i][j]!=-1){
             return dp[i][j];
         }
-        if(s[i]==t[j]){
-            return dp[i][j] = f(i-1,j-1,s,t,dp);
+        if(s1[i]==s2[j]){
+            return dp[i][j]=f(s1,s2,i-1,j-1,dp);
         }
-        return dp[i][j] = 1+min(f(i-1,j-1,s,t,dp),min(f(i-1,j,s,t,dp),f(i,j-1,s,t,dp)));
+        int r = f(s1,s2,i-1,j-1,dp);
+        int in = f(s1,s2,i,j-1,dp);
+        int del = f(s1,s2,i-1,j,dp);
+        return dp[i][j] = (1+min(r,min(in,del)));
     }
+    
     int minDistance(string word1, string word2) {
-        int n = word1.size();
-        int m = word2.size();
+        int n = word1.length();
+        int m = word2.length();
         vector<vector<int>> dp(n,vector<int>(m,-1));
-        return f(n-1,m-1,word1,word2,dp);
+        return f(word1,word2,n-1,m-1,dp);
     }
 };
