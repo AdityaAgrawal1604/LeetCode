@@ -5,7 +5,7 @@ public:
 
         int l = 1;
         int n = piles.size();
-        int hi = 1000000000;
+        int hi = piles[n-1];
         int mid = (l+hi)/2;
         int k = INT_MAX;
         while(l<=hi){
