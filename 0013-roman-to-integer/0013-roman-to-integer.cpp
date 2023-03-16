@@ -3,36 +3,29 @@ public:
     int romanToInt(string s) {
         int ans=0;
         int n = s.size();
-        int I = 1;
-        int V = 5;
-        int X = 10;
-        int L = 50;
-        int C = 100;
-        int D = 500;
-        int M = 1000;
         vector<int> v(n);
         for(int i = 0;i<n;i++){
             if(s[i]=='I'){
-                v[i] = I;
+                v[i] = 1;
             }
             if(s[i]=='V'){
-                v[i] = V;
+                v[i] = 5;
             }
             if(s[i]=='X'){
-                v[i] = X;
+                v[i] = 10;
             }
             
             if(s[i]=='L'){
-                v[i] = L;
+                v[i] = 50;
             }
             if(s[i]=='C'){
-                v[i] = C;
+                v[i] = 100;
             }
             if(s[i]=='D'){
-                v[i] = D;
+                v[i] = 500;
             }
             if(s[i]=='M'){
-                v[i] = M;
+                v[i] = 1000;
             }
         }
         for(int i = 0;i<n-1;i++){
