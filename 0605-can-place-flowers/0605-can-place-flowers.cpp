@@ -20,24 +20,18 @@ public:
         int ans = 0;
         ans+=((st)/2);
         ans+=((en)/2);
-        vector<int> v;
         int z = 0;
         for(int i = st;i<(k-en);i++){
             if(f[i]==1){
                 if(z){
-                    v.push_back(z);
+                    // v.push_back(z);
+                    ans+=((z-1)/2);
                 }
                 z = 0;
             }else{
                 z++;
             }
         }
-        
-        for(auto x:v){
-            x-=2;
-            ans+=(x+1)/2;
-        }
-        // cout<<ans<<endl;
         return (n<=ans);
         
     }
