@@ -29,7 +29,7 @@ public:
                 s= s->next;
             }
         }
-        cout<<s->val<<" "<<s->next->val<<endl;
+        // cout<<s->val<<" "<<s->next->val<<endl;
         ListNode *p = s;
         ListNode *q = s->next;
         ListNode *r;
@@ -46,7 +46,7 @@ public:
         q->next = p;
         ListNode *c1 = head;
         ListNode *c2 = last;
-        cout<<c1->val<<" "<<c2->val<<endl;
+        // cout<<c1->val<<" "<<c2->val<<endl;
         while(c1&&c2){
             if(c1->val!=c2->val){
                 return false;
