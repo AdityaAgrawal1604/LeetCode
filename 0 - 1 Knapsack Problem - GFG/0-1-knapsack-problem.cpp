@@ -9,14 +9,11 @@ class Solution
     public:
     //Function to return max value that can be put in knapsack of capacity W.
     int f(int i,int j,int wt[],int val[],vector<vector<int>>&dp){
-        if(j==0){
-            return 0;
-        }
-        if(i==0){
+        if(i<0){
             // return 0;
-            if(j>=wt[i]){
-                return val[i];
-            }
+            // if(j>=wt[i]){
+            //     return val[i];
+            // }
             return 0;
         }
         if(dp[i][j]!=-1){
