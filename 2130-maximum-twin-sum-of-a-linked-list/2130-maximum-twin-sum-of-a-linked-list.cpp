@@ -13,19 +13,23 @@ public:
     int pairSum(ListNode* head) {
         int n = 0;
         ListNode *p = head;
-        while(p){
-            n++;
-            p = p->next;
-        }
-        p = head;
+        ListNode *q = head;
+
+        // while(p){
+        //     n++;
+        //     p = p->next;
+        // }
+        // p = head;
         stack<ListNode*> st;
-        int m = n/2;
+        // int m = n/2;
         int maxi = 0;
-        while(m--){
-            st.push(p);
+        while(p){
+            st.push(q);
             p = p->next;
+            p = p->next;
+            q = q->next;
         }
-        
+        p = q;
         while(!st.empty()){
             int sm = 0;
             sm = st.top()->val;
