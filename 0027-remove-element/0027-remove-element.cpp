@@ -2,7 +2,7 @@ class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
         int n = nums.size();
-        int k;
+        int k=n;
         for(int i = 0;i<n;i++){
             if(nums[i]==val){
                 int f = 0;
@@ -15,12 +15,6 @@ public:
                 }
                 // for(int f = 0;f<n;f++) cout<<nums[f]<<" ";
                 if(nums[i]==val) i--;
-            }
-        }
-        for(int i = 0;i<n;i++){
-            if(nums[i]==val){
-                k = i;
-                break;
             }
         }
         return k;
