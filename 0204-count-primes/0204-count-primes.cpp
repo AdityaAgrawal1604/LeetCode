@@ -2,7 +2,7 @@
 vector<ll> pr(5000006, 1);
 class Solution {
 public:
-    vector<ll> primes;
+   int cnt =0;
 
     void sieve(ll n)
     {
@@ -13,14 +13,13 @@ public:
                 for(ll j=i*i; j<=n; j+=i) pr[j]=0;
             }
         }
-        for(ll i=1; i<=n; i++) if(pr[i]) primes.push_back(i);
+        for(ll i=1; i<=n; i++) if(pr[i]) cnt++;;
     }
     
     int countPrimes(int n) {
-        sieve(n-1);
-        cout<<primes.size()<<"\n";
-        int ans = primes.size();
-        return ans;
+ cnt =0;       sieve(n-1);
+        
+        return cnt;
         
    
     }
