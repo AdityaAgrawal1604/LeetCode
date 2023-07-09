@@ -53,8 +53,7 @@ public:
             }       
         }
         for(int i =0 ;i<n;i++){
-            add+=ans[i];
-            // cout<<ans[i]<<" ";    
+            add+=ans[i];   
         }
         // cout<<endl;
         return add;
