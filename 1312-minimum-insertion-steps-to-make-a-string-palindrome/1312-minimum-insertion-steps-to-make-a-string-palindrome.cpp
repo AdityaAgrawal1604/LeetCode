@@ -11,19 +11,21 @@ public:
     }
     int minInsertions(string s) {
         int n = s.size();
-        vector<vector<int>> dp(n+2,vector<int>(n+2,0));
+        vector<int> dp(n+2,0);
         for(int i = n;i>0;i--){
+            vector<int> curr(n+2,0);
             for(int j = 1;j<=n;j++){
                 if(i>j) continue;
-                if(s[i-1]==s[j-1]) dp[i][j] = dp[i+1][j-1];
+                if(s[i-1]==s[j-1]) curr[j] = dp[j-1];
                 else
                 {
-                    dp[i][j] = (1+min(dp[i+1][j],dp[i][j-1]));
+                    curr[j] = (1+min(dp[j],curr[j-1]));
                 }                
             }
+            dp = curr;
         }
         int ans = 0;
-        ans = dp[1][n];
+        ans = dp[n];
         return ans;
     }
 };
