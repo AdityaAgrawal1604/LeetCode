@@ -12,8 +12,9 @@ public:
         ans = f(i,j+1,n,s,dp);
         if(mp[s.substr(i,(j-i+1))]){
             ans = min(ans,f(j+1,j+1,n,s,dp));
+        }else{
+            ans = min(ans,(j-i+1)+f(j+1,j+1,n,s,dp));
         }
-        ans = min(ans,(j-i+1)+f(j+1,j+1,n,s,dp));
         return dp[i][j] = ans;
     }
     int minExtraChar(string s, vector<string>& dict) {
