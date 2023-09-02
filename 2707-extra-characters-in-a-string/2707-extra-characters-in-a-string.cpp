@@ -2,11 +2,7 @@ map<string,int> mp;
 class Solution {
 public:
     int f(int i,int j,int n,string &s,vector<vector<int>> &dp){
-        if(j==(n-1))
-        {
-            if(mp[s.substr(i,j-i+1)]) return 0;
-            return j-i+1;
-        }
+        if(j==n) return (j-i);
         if(dp[i][j]!=-1) return dp[i][j];
         int ans;
         ans = f(i,j+1,n,s,dp);
